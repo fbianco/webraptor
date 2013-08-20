@@ -1,0 +1,13 @@
+title: A page from a template
+template: custom_page.pyhtml
+collaborations:
+    - name: A list
+      link: https://webraptor/
+    - name: An other item
+      link: http://webraptor
+      who:
+          - Special template for pages
+          - Can be created
+          - By simply creating a .yml file instead of
+          - The .html file in content
+          - and by setting its template.

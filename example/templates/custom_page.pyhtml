@@ -1,0 +1,32 @@
+<h1>${title}</h1>
+<?py
+for c in collaborations:
+?>
+<h2>${c['name']}</h2>
+<div>
+<a href="#{c['link']}">${c['name']}</a>
+<?py
+    if c.has_key('who'):
+?>
+<ul>
+<?py
+        if not isinstance(c['who'], list):
+?>
+<li>${c['who']}</li>
+<?py
+        else:
+            for who in c['who']:
+?>
+    <li>${who}</li>
+<?py
+            #endfor
+        #endif
+?>
+</ul>
+<?py
+    #endif
+?>
+</div>
+<?py
+#endfor
+?>

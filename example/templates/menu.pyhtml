@@ -1,0 +1,52 @@
+    <div id="menu">
+        <ul id="nav">
+<?py
+for menu in menus:
+    if menu.has_key('displayinmenu') and False == menu['displayinmenu']:
+        next
+    else:
+        name = simplename(menu['name'])
+        onepage = False
+        if menu.has_key('onepage') and True == menu['onepage']:
+            onepage = True
+            link = name+'.html'
+        else:
+            link = '#'
+        #endif
+?>
+            <li>
+                <a href="#{link}"><span class="#{name}">${menu['name']}</span></a>
+<?py
+        if menu.has_key('submenus'):
+?>
+                <ul>
+<?py
+            for submenu in menu['submenus']:
+                if type(submenu) == type({}) and submenu.has_key('name'):
+                    pagename = simplename(submenu['name'])
+                    sublink = simplename(submenu['pagename'])+'.html'
+                    submenu = submenu['name']
+                else:
+                    pagename = simplename(submenu)
+                    if onepage:
+                        sublink = link+'#'+pagename
+                    else:
+                        sublink = pagename+'.html'
+                    #endif
+                #endif
+?>
+                    <li><a href="#{sublink}">${submenu}</a></li>
+<?py
+            #endfor
+?>
+                </ul>
+<?py
+        #endif
+?>
+            </li>
+<?py
+    #endif
+#endfor
+?>
+        </ul>
+    </div>

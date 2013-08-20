@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <title>Webraptor – Admin</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+</head>
+<body>
+
+<div id="content">
+    <h1>Preview and release</h1>
+    <ol>
+      <li>
+        <form id="test" action="make.py" method="post">
+            <input type="hidden" name="admin" value="True" />
+            <input type="hidden" name="preview" value="True" />
+            <input id="test-button" type="button" value="Generate preview" />
+        </form>
+      </li>
+      <li>
+        <form id="preview" action="example/preview/" method="post">
+            <input type="submit" value="Preview" />
+        </form>
+      </li>
+      <li>
+        <form id="release" action="make.py" method="post">
+            <input type="hidden" name="admin" value="True" />
+            <input type="hidden" name="preview" value="False" />
+            <input id="release-button" type="button" value="Release" />
+        </form>
+      </li>
+    </ol>
+    <textarea id="result"></textarea>
+    <div class="clearer">&nbsp;</div>
+</div>
+
+<script type="text/javascript" src="example/js/mootools.js"></script>
+<script type="text/javascript" src="example/js/mootools-more.js"></script>
+<script type="text/javascript" src="admin.js"></script>
+
+</body>
+</html>

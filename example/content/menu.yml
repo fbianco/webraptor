@@ -1,0 +1,26 @@
+# List all the menus and submenus
+# be carefull with the YAML syntax...
+menus:
+    - name: Index
+      displayinmenu: False
+      title: Welcome
+      summary: "This is an example page summary for this homemade webraptor template."
+    - name: Pages
+      summary: "Example pages with submenus"
+      submenus:
+        - Page 1
+        - name: A custom name
+          pagename: Page 2
+        - name: Custom template
+          pagename: custom page
+    - name: Page 3
+      onepage: True
+      summary: "This allows to create submenu going onto the same page with local anchor."
+      submenus:
+        - Local Anchor 1
+        - Local Anchor 2
+        - name: Test
+          pagename: Page 2
+    - name: Error404
+      displayinmenu: False
+      title: Erreur page introuvable

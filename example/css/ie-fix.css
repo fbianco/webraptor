@@ -1,0 +1,6 @@
+iframe{
+    width:550px;
+    height:1000px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    }

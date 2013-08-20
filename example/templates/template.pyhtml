@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+
+<head>
+    <title>Webraptor example – ${title}</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+    <link rel="icon" type="image/png" href="favico.png" />
+<?py
+if not compressed:
+?>
+    <link rel="stylesheet" type="text/css" href="css/blueprint-screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/MenuMatic.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/mediabox.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+<?py
+else:
+?>
+    <link rel="stylesheet" type="text/css" href="css/compressed.css" media="screen" />
+<?py
+#endif
+?>
+    <link rel="stylesheet" type="text/css" href="css/blueprint-print.css" media="print" />
+
+    <!--[if lt IE 7]>
+        <link rel="stylesheet" type="text/css" href="css/blueprint-ie.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/MenuMatic-ie6.css" media="screen" />
+    <![endif]-->
+
+    <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie-fix-ie7.css" media="screen" />
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/ie-fix.css" media="screen" />
+    <![endif]-->
+</head>
+<body>
+
+<div id="header">
+    <div class="container">
+        <div>
+        <h1><a href="index.html">Webraptor Example website</a></h1>
+
+        <div id="social">
+            <div class="facebook">
+                <a href="https://www.facebook.com/webraptor">Find us on FB</a><br />
+                <a href="https://www.facebook.com/sharer.php?u=http://webrap.tor/${pageurl}&amp;t=${title}">Share it on FB</a>
+            </div>
+            <form method="post" action="#">
+                <div class="email">
+                    <input id="topemail" type="text" class="email" name="email" value="Stay informed!"  title="Please enter your email address to get information about our activities." />
+                    <input type="hidden" name="digest" value="0" />
+                </div>
+            </form>
+            <div class="subscribe">
+                <a href="register.html">Become a member</a><br />
+                <a href="#.html">Recommend us to someone</a>
+            </div>
+        </div>
+        </div>
+
+        <div id="logo">The logo</div>
+        <h2>#{maintitle}</h2>
+        <p class="summary">#{summary}</p>
+
+        #{menu}
+    </div>
+</div>
+
+<div id="body">
+    <div class="container">
+        <div id="sidetabright">
+            <div id="newstab">
+                <div id="news">&nbsp;</div>
+
+                <form method="post" action="#">
+                    <div>
+                        <input id="centeremail" type="text" class="email" name="email" value="Stay informed!"  title="Please enter your email address to get information about our activities." />
+                        <input type="hidden" name="digest" value="0" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="content">
+            #{content}
+            <div class="clearer">&nbsp;</div>
+        </div>
+
+        <div id="footer">
+            <div class="left">Last updated the ${date}</div>
+            <div class="right">Design by <a href="mailto:francois.bianco@skadi.ch">François Bianco</a> under <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a></div>
+        </div>
+    </div>
+</div>
+
+<?py
+if not compressed:
+?>
+<script type="text/javascript" src="js/mootools.js"></script>
+<script type="text/javascript" src="js/menumatic.js"></script>
+<script type="text/javascript" src="js/mediabox.js"></script>
+<script type="text/javascript" src="js/effects.js"></script>
+<?py
+else:
+?>
+<script type="text/javascript" src="js/compressed.js"></script>
+<?py
+#endif
+?>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+    /*Load jQuery if not already loaded*/ if(typeof jQuery == 'undefined'){ document.write("<script type=\"text/javascript\"   src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js\"></"+"script>"); var __noconflict = true; }
+    var IE6UPDATE_OPTIONS = {
+        icons_path: "ie6update/images/"
+    }
+</script>
+<script type="text/javascript" src="ie6update/ie6update.js"></script>
+<![endif]-->
+
+<?py
+""" Example of inline javascript, required for valid xthml
+<script type="text/javascript">
+//<![CDATA[
+
+//]]>
+</script>
+"""
+?>
+
+</body>
+</html>
